@@ -27,9 +27,9 @@ I customized and extended the base project with:
 
 | Input | Action |
 |------|--------|
-| ↑    | Thrust (move forward) |
-| ← / → | Rotate ship |
-| Space | Fire bullet |
+| W / S    | Thrust / Move Backward |
+| A / D | Rotate ship |
+| Space | Fire bullets |
 
 ## 🧰 Tech Used
 
