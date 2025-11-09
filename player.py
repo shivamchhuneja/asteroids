@@ -2,6 +2,7 @@ from circleshape import *
 from constants import *
 from shot import *
 
+
 class Player(CircleShape):
     def __init__(self, x, y):
         super().__init__(x, y, PLAYER_RADIUS)
@@ -40,7 +41,7 @@ class Player(CircleShape):
         self.cooldown -= dt
         if self.cooldown < 0:
             self.cooldown = 0
-       
+
     def move(self, dt):
         keys = pygame.key.get_pressed()
 
@@ -58,8 +59,8 @@ class Player(CircleShape):
         if self.cooldown > 0:
             return
         else:
-            shot = Shot(self.position.x, self.position.y)
+            shot = Shot(self.position.x, self.position.y, self.rotation)
             self.cooldown = PLAYER_SHOOT_COOLDOWN_SECONDS
-            shot.velocity = pygame.Vector2(0,1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
-          
-    
+            shot.velocity = (
+                pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
+            )

@@ -21,7 +21,7 @@ def main():
     dt = 0
     BLACK = (48, 25, 52)
     score = 0
-    font = pygame.font.SysFont('Caskaydia Mono Nerd Font', 25)
+    font = pygame.font.SysFont("Caskaydia Mono Nerd Font", 25)
 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
@@ -39,10 +39,8 @@ def main():
     Player.containers = (updatable, drawable)
     Shot.containers = (shots, updatable, drawable)
 
-
     player = Player(x, y)
     asteroidfield = AsteroidField()
-    
 
     while True:
         log_state()
@@ -55,7 +53,7 @@ def main():
         time_elapsed = Clock.tick(60)
         dt = time_elapsed / 1000
         updatable.update(dt)
-        screen.blit(score_text, (10,10))
+        screen.blit(score_text, (10, 10))
         for astr in asteroids:
             if astr.collides_with(player) == True:
                 log_event("player_hit")
